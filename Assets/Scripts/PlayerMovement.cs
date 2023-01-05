@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool collisionDetected;
 
     [SerializeField] float _speed = 40;
-    [SerializeField] int _FireForce = 10;
     private int _limiteDroite;
     private int _limiteGauche;
     private Vector3 positionJoueurDroite;

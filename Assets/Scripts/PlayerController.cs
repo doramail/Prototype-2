@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerMovement _movement;
-    [SerializeField] SpawnManager _fireAction;
+ //   [SerializeField] SpawnManager _fireAction;
+    [SerializeField] SpawnManager _spawnEnnemi;
+    private bool _fireAction = false;
 
     public GameObject projectilePrefab;
 
@@ -18,9 +20,10 @@ public class PlayerController : MonoBehaviour
     {
         if (ctx.performed)
         {
-            _fireAction.ProjectileLauch();
+            _fireAction = true; // fire action triggered.
+            //_fireAction.ProjectileLauch();
             // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de pizza.
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            // Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
 
@@ -28,9 +31,17 @@ public class PlayerController : MonoBehaviour
     {
         if (ctx.performed)
         {
-            _fireAction.ProjectileLauch();
+            _spawnEnnemi.SpawnEnnemi();
+        }
+    }
+
+    void Update()
+    {
+        if (_fireAction == true)
+        {
             // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de pizza.
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            _fireAction = false; // Arrête le spawn des ennemis.
         }
     }
 
