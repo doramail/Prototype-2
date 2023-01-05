@@ -18,13 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public void FireCharacter(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
-        {
             _fireAction = true; // fire action triggered.
-            //_fireAction.ProjectileLauch();
-            // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de pizza.
-            // Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-        }
     }
 
     public void SpawnAnimal(InputAction.CallbackContext ctx)
@@ -39,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_fireAction == true)
         {
-            // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de pizza.
+            // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de 2 pizzas .
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
             _fireAction = false; // Arrête le spawn des ennemis.
         }

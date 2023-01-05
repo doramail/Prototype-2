@@ -393,6 +393,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b822b26e-5ee6-4bcd-b885-c40fe90b5f14
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 262130276}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SpawnAnimal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 26e6421d-2df9-4de8-837e-d69a131c89fa
+    m_ActionName: Player/Spawn[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -416,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 262130278}
-  _fireAction: {fileID: 1756933377}
+  _spawnEnnemi: {fileID: 455081767}
   projectilePrefab: {fileID: 8001363890493026288, guid: 543f07c4b0f75c1488e38aab3b7dee82, type: 3}
 --- !u!54 &262130277
 Rigidbody:
@@ -448,9 +464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 262130277}
   _animator: {fileID: 262130275}
-  collisionDetected: 1
+  collisionDetected: 0
   _speed: 40
-  _FireForce: 10
   velocityXZ: {x: 0, y: 0, z: 0}
   LeftLimit: {fileID: 1590138454}
   RightLimit: {fileID: 425805626}
@@ -626,6 +641,7 @@ MonoBehaviour:
   - {fileID: 6687284491960222334, guid: 355cf1e4a43debd4d8ad562c5c704206, type: 3}
   - {fileID: 2593472967063737881, guid: 2b11f4235789c5742a5e5c82b4915bc6, type: 3}
   - {fileID: 7846350977809111893, guid: c02d9b800fbe9744692ddb326b61c39e, type: 3}
+  animalIndex: 3
 --- !u!1 &475985833
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,17 +977,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1756933377 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8001363890590574645, guid: 543f07c4b0f75c1488e38aab3b7dee82, type: 3}
-  m_PrefabInstance: {fileID: 8001363890198889780}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3926a6ab7d8a96458c8feaf2f5f3cd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8001363890198889780
 PrefabInstance:
   m_ObjectHideFlags: 0
