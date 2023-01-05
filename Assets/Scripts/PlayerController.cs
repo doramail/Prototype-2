@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerMovement _movement;
-    [SerializeField] MoveForward _fireAction;
+    [SerializeField] SpawnManager _fireAction;
 
     public GameObject projectilePrefab;
 
@@ -16,6 +16,22 @@ public class PlayerController : MonoBehaviour
 
     public void FireCharacter(InputAction.CallbackContext ctx)
     {
-        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        if (ctx.performed)
+        {
+            _fireAction.ProjectileLauch();
+            // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de pizza.
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
     }
+
+    public void SpawnAnimal(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            _fireAction.ProjectileLauch();
+            // Chaque appui sur la touche paramétrée dans le Input System (ici "Espace") provoque un tir de pizza.
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
+    }
+
 }

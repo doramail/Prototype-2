@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private Vector2 _movement = Vector2.zero;
+
     private object other;
 
     private void Reset()
@@ -49,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector2 movement)
     {
-        float horizontalInput = movement.x;
-        float verticalInput = movement.y;
         _movement = movement;
     }
 
@@ -59,55 +58,34 @@ public class PlayerMovement : MonoBehaviour
         // if other collider is the "LeftBorder" or "Rightborder", the do something.
         if (other.gameObject.CompareTag("LeftBorder"))
         {
-            Debug.Log("Player has collided on the LEFT Border.");
+            // Debug.Log("Player has collided on the LEFT Border.");
             positionJoueurGauche = GetComponent<Rigidbody>().position;
             positionJoueurGaucheX = positionJoueurGauche.x;
-            Debug.Log("Player LEFT Border position is :" + positionJoueurGaucheX);
+            // Debug.Log("Player LEFT Border position is :" + positionJoueurGaucheX);
         }
         if (other.gameObject.CompareTag("RightBorder"))
         {
-            Debug.Log("Player has collided on the RIGHT Border.");
+            // Debug.Log("Player has collided on the RIGHT Border.");
             positionJoueurDroite = GetComponent<Rigidbody>().position;
             positionJoueurDroiteX = positionJoueurDroite.x;
 
-            Debug.Log("Player RIGHT Border position is :" + positionJoueurDroiteX);
+            // Debug.Log("Player RIGHT Border position is :" + positionJoueurDroiteX);
         }
-
-        /*
-        public void Jump()
-        {
-            _rb.AddForce(Vector3.up * _FireForce, ForceMode.Impulse);
-        }
-
-        public void CancelJump()
-        {
-            if (_rb.velocity.y > 0)
-            {
-                _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-            }
-        }
-        */
     }
+
     private void FixedUpdate()
     {
         // Détection de collision à droite ou à gauche
-        collisionDetected = Physics.Raycast(transform.position, Vector3.right,0.67f) || (Physics.Raycast(transform.position, Vector3.left, 0.67f));
+        collisionDetected = Physics.Raycast(transform.position, Vector3.right,1f) || (Physics.Raycast(transform.position, Vector3.left, 1f));
         if (collisionDetected)
         {   
-            if (positionJoueurGaucheX !=0 || positionJoueurDroiteX != 0)
+            if (positionJoueurGaucheX != 0 || positionJoueurDroiteX != 0)
             {
                 limitPosition = transform.position.x;
                 transform.position = new Vector3(limitPosition * _speed * Time.deltaTime, _movement.y * _speed * Time.deltaTime, 0);
             }
-
-            // transform.Translate(_movement * _speed * Time.deltaTime, relativeTo: Space.World);
-            //transform.position = new Vector3(limitPosition, 0, 0);
         }
-        Debug.Log("New limitPosition = " + limitPosition);
-        //if (collisionDetected)
-        {
-        //transform.position = new Vector3(limitPosition, 0, 0);
-        }
+        // Debug.Log("New limitPosition = " + limitPosition);
         // déplacement horizontal (Vector2) du player
         //transform.Translate(_movement * _speed * Time.deltaTime, relativeTo: Space.World);
         transform.Translate(_movement * _speed * Time.deltaTime, relativeTo: Space.World);
@@ -122,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
         //   // _rb.velocity = new Vector3(_movement.x * _speed, _rb.velocity.y, _movement.y * _speed);
         //   // _ = new Vector3(_rb.velocity.x * Time.deltaTime, 0, _rb.velocity.z * Time.deltaTime);
         //}
-
         //else
         //{
         //    if (_movement.x < positionJoueurDroiteX)
