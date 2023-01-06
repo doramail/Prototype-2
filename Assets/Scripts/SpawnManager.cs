@@ -8,6 +8,9 @@ public class SpawnManager : MonoBehaviour
     public int animalIndex;
 
     private bool _spawnEnnemi = false;
+    private float spawnRangeX = 20;
+    private float spawnPositionZ = 20;
+
 
     public void SpawnEnnemi()
     {
@@ -21,9 +24,10 @@ public class SpawnManager : MonoBehaviour
         if (_spawnEnnemi == true)
         {
             int animalIndex = Random.Range(0,animalPrefabs.Length);
-
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPositionZ);
+            Debug.Log("spawnPosition = " + spawnPosition);
             // Fait apparaître les ennemis (animaux) OK !
-            Instantiate(animalPrefabs[animalIndex], new Vector3(0, 0, 20), animalPrefabs[animalIndex].transform.rotation);
+            Instantiate(animalPrefabs[animalIndex], spawnPosition, animalPrefabs[animalIndex].transform.rotation);
 
             _spawnEnnemi = false; // Arrête le spawn des ennemis.
 
