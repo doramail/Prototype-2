@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Spawn",
+                    "name": "ReSpawnPlayer",
                     "type": "Button",
                     "id": "26e6421d-2df9-4de8-837e-d69a131c89fa",
                     "expectedControlType": "Button",
@@ -169,11 +169,11 @@
                 {
                     "name": "",
                     "id": "2ec7bdc7-8599-47ef-ac1e-cc9535c5379c",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Spawn",
+                    "action": "ReSpawnPlayer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

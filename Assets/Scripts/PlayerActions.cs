@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SpawnPlayer(bool _reSpawn)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position = Vector2.zero;
+        Debug.Log("Respawn player requested");
     }
 }

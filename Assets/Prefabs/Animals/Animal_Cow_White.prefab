@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 7218941780778286357}
   - component: {fileID: 7218941780771194393}
   - component: {fileID: 7218941781399983835}
+  - component: {fileID: 4055030213721163242}
+  - component: {fileID: -3016706074112430886}
+  - component: {fileID: 1261777392079754723}
+  - component: {fileID: 621765980499119655}
   m_Layer: 0
   m_Name: Animal_Cow_White
   m_TagString: Untagged
@@ -67,6 +71,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!65 &4055030213721163242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7218941780778289977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.678296, y: 30.975683, z: 47.853584}
+  m_Center: {x: 0.030395057, y: 15.412003, z: -0.021643108}
+--- !u!114 &-3016706074112430886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7218941780778289977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7a8817de4cbf04b8fb53e03113c9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1261777392079754723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7218941780778289977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff19f7e3d0bfd0c4eadd4203b17188e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &621765980499119655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7218941780778289977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff19f7e3d0bfd0c4eadd4203b17188e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7218941780778290089
 GameObject:
   m_ObjectHideFlags: 0

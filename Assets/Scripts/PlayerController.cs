@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerMovement _movement;
- //   [SerializeField] SpawnManager _fireAction;
-    [SerializeField] SpawnManager _spawnEnnemi;
+    [SerializeField] PlayerActions _reSpawn;
+
     private bool _fireAction = false;
 
     public GameObject projectilePrefab;
@@ -18,15 +18,12 @@ public class PlayerController : MonoBehaviour
 
     public void FireCharacter(InputAction.CallbackContext ctx)
     {
-            _fireAction = true; // fire action triggered.
+        _fireAction = true; // fire action triggered.
     }
 
-    public void SpawnAnimal(InputAction.CallbackContext ctx)
+    public void RespawnPlayer(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
-        {
-            _spawnEnnemi.SpawnEnnemi();
-        }
+        _reSpawn.SpawnPlayer(true);
     }
 
     void Update()
@@ -38,5 +35,4 @@ public class PlayerController : MonoBehaviour
             _fireAction = false; // Arrête le spawn des ennemis.
         }
     }
-
 }

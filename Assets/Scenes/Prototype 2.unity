@@ -397,7 +397,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 262130276}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: SpawnAnimal
+        m_MethodName: RespawnPlayer
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movement: {fileID: 262130278}
-  _spawnEnnemi: {fileID: 455081767}
+  _reSpawn: {fileID: 262130280}
   projectilePrefab: {fileID: 8001363890493026288, guid: 543f07c4b0f75c1488e38aab3b7dee82, type: 3}
 --- !u!54 &262130277
 Rigidbody:
@@ -462,11 +462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94bd8e00cf0e374aa6fee633fe9ab16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocityXZ: {x: 0, y: 0, z: 0}
   _rb: {fileID: 262130277}
   _animator: {fileID: 262130275}
   collisionDetected: 0
   _speed: 40
-  velocityXZ: {x: 0, y: 0, z: 0}
   LeftLimit: {fileID: 1590138454}
   RightLimit: {fileID: 425805626}
 --- !u!65 &262130279
@@ -769,7 +769,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -781,7 +781,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 92.02574
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -794,7 +794,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -806,14 +806,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: 0, y: 25, z: 5}
-  m_LocalScale: {x: 1, y: 20.01, z: 1}
+  m_LocalRotation: {x: 0.4848096, y: 0, z: 0, w: 0.8746197}
+  m_LocalPosition: {x: 0, y: 8, z: -2.6}
+  m_LocalScale: {x: 1, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 122, y: 180, z: 180}
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
